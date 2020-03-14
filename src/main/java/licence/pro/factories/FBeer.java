@@ -1,5 +1,5 @@
 package licence.pro.factories;
 
-public class FConso {
+public class FBeer {
 
 }
