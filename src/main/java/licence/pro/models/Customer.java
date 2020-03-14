@@ -13,8 +13,15 @@ public class Customer implements Runnable {
               // nos mangeurs mangent de façon aléatoire...
              Thread.sleep(CUSTOMER_TICK) ;
              
-             if(SBar.getInstance().getNbPeerPouredNotTook() > 0) {
+             /*if(SBar.getInstance().getNbPeerPouredNotTook() > 0) {
             	 SBar.getInstance().takeBeer();
+            	 System.out.println("[" + Thread.currentThread().getName() +  "]" + "[" + SBar.getInstance().getNbPeerPouredNotTook() +  "] glou glou");
+             }else {
+            	 System.out.println("[" + Thread.currentThread().getName() +  "]" + "[" + SBar.getInstance().getNbPeerPouredNotTook() +  "] j'ai soif");
+             }*/
+             
+             Beer beer = SBar.getInstance().takeBeer();
+             if(beer != null) {            	 
             	 System.out.println("[" + Thread.currentThread().getName() +  "]" + "[" + SBar.getInstance().getNbPeerPouredNotTook() +  "] glou glou");
              }else {
             	 System.out.println("[" + Thread.currentThread().getName() +  "]" + "[" + SBar.getInstance().getNbPeerPouredNotTook() +  "] j'ai soif");

@@ -9,6 +9,7 @@ import licence.pro.singletons.SBeerStock;
 public class Bar {
 	
 	private BeerStock beerStock = SBeerStock.getInstance();
+	private Object key =  new Object() ;
 	
     // The bar can make available a maximum of 20 beer
     private BlockingQueue<Beer> queue =  new ArrayBlockingQueue<Beer>(20) ;
@@ -24,8 +25,10 @@ public class Bar {
     }
     
     // Customer get a beer
-    public Beer takeBeer ()  throws InterruptedException {
-       return queue.poll(200, TimeUnit.MILLISECONDS) ;
+    public synchronized Beer takeBeer ()  throws InterruptedException {
+    	synchronized(key) {
+    		return queue.poll(200, TimeUnit.MILLISECONDS) ;
+    	}
     }
     
     // How much beer can be taken by customers
