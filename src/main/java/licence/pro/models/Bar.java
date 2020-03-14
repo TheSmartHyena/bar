@@ -9,13 +9,13 @@ import licence.pro.singletons.SBeerStock;
 public class Bar {
 	
 	// Required for synchronized code execution
-	private Object key =  new Object() ;
+	private Object key = new Object();
 	
     // The bar can make available a maximum of 20 beers at a time
-    private BlockingQueue<Beer> queue =  new ArrayBlockingQueue<Beer>(20) ;
+    private BlockingQueue<Beer> queue =  new ArrayBlockingQueue<Beer>(20);
         
     /* @return {boolean} if a beer was added to the queue. */
-    public synchronized boolean addBeer(Beer beer)  throws InterruptedException {
+    public synchronized boolean addBeer(Beer beer) throws InterruptedException {
     	synchronized(key) {
 	    	boolean result = queue.offer(beer,  200, TimeUnit.MILLISECONDS);
 	    	if (result)

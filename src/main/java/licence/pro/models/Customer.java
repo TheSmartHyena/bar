@@ -7,14 +7,14 @@ public class Customer implements Runnable {
 	public void run() {
         try {
         	while (!Thread.currentThread().isInterrupted()) {        		   		
-        		Thread.sleep(ProjectConstants.TICK_CUSTOMER) ;    
+        		Thread.sleep(ProjectConstants.TICK_CUSTOMER);    
         		
         		// Every tick, the customer will try to take a beer from the queue     
         		Beer beer = SBar.getInstance().takeBeer();
-        		if(beer != null) {            	 
-        			System.out.println("[" + Thread.currentThread().getName() +  "]" + "[" + SBar.getInstance().getNbPeerPouredNotTook() +  "] sip sip");
+        		if (beer != null) {            	 
+        			System.out.println("[" + Thread.currentThread().getName() + "]" + "[" + SBar.getInstance().getNbPeerPouredNotTook() +  "] sip sip.");
         		}else {
-        			System.out.println("[" + Thread.currentThread().getName() +  "]" + "[" + SBar.getInstance().getNbPeerPouredNotTook() +  "] I'm thirsty");
+        			System.out.println("[" + Thread.currentThread().getName() +  "]" + "[" + SBar.getInstance().getNbPeerPouredNotTook() +  "] I'm thirsty.");
         		}             	            
            }
        } catch (InterruptedException e) {
