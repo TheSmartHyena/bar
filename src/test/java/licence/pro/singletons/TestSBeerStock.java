@@ -8,29 +8,29 @@ import licence.pro.models.BeerStock;
 
 //import licence.pro.singletons.*;
 
-public class TestSBeer {
+public class TestSBeerStock {
 	
-	private BeerStock instance;
+	private BeerStock beerStock;
 
 	@Before
 	public void setUp() {
-		instance = SBeerStock.getInstance();
+		beerStock = SBeerStock.getInstance();
 	}
 	
 	@Test
 	public void testSBeerStock_notNull() {
-		assertNotNull(instance); 
+		assertNotNull(beerStock); 
 	}
 	
 	@Test
 	public void testSBeerStock_shouldReturnBeerStockInstance() {
-		assertTrue(instance instanceof BeerStock);
+		assertTrue(beerStock instanceof BeerStock);
 	}
 	
 	@Test
 	public void testSBeerStock_shouldReturnWaiterOnlyOneInstance() {
 		BeerStock beerStockTest = SBeerStock.getInstance();
-		assertSame(instance, beerStockTest);
+		assertSame(beerStock, beerStockTest);
 	}
 	
 }
