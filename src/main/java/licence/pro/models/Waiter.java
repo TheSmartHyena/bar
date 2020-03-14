@@ -22,7 +22,7 @@ public class Waiter implements Runnable {
 				}
 			}
 		} catch (InterruptedException e) {
-			System.out.println("[" + Thread.currentThread().getName() +  "] je m'arrête") ;
+			System.out.println("[" + Thread.currentThread().getName() +  "] No more beer to poor, i'm stopping.") ;
 		}
 	}	
 }

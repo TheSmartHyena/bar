@@ -1,5 +1,6 @@
 package licence.pro.models;
 
+import licence.pro.constants.ProjectConstants;
 import licence.pro.singletons.SBar;
 import licence.pro.singletons.SBeerStock;
 import licence.pro.singletons.SCustomers;
@@ -18,7 +19,7 @@ public class Ia implements Runnable {
 				Thread.sleep(IA_TICK);
 
 				// Put some random disaster
-				if (SRandom.getInstance().nextInt(43) == 42)
+				if (SRandom.getInstance().nextInt(ProjectConstants.CHANCES_OF_FIRE) == ProjectConstants.CHANCES_OF_FIRE -1)
 					interupEverything();
 					
 				// If no more available beer, terminate all waiter thread
@@ -42,6 +43,7 @@ public class Ia implements Runnable {
 	}
 	
 	private void interupEverything() {
+		System.out.println("Bar took fire, please evacuate in calm.");
 		interupCustomers();
 		interupWaiters();
 		interupIa();

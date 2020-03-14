@@ -18,7 +18,7 @@ public class Customer implements Runnable {
         		}             	            
            }
        } catch (InterruptedException e) {
-    	   System.out.println("[" + Thread.currentThread().getName() +  "] I'm stopping") ;
+    	   System.out.println("[" + Thread.currentThread().getName() +  "] No more beer to drink, i'm stopping") ;
        }
     }	
 }
