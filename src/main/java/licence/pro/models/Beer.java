@@ -1,5 +1,5 @@
 package licence.pro.models;
 
-public class Conso {
+public class Beer {
 
 }
