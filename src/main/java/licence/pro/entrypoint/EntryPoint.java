@@ -14,18 +14,12 @@ public class EntryPoint {
 	   	iaThread.start();
 	    
 	   	// Start all waiters threads
-	    for (int i =  0 ; i < SWaiters.getInstance().length ; i++) {
-	    	System.out.println(i);
+	    for (int i =  0 ; i < SWaiters.getInstance().length ; i++) 
 	    	SWaiters.getInstance()[i].start();	    	
-	    	System.out.println(SWaiters.getInstance()[i].isInterrupted());
-	    }
-	    
-	    // Start all Customers thread
-	    for (int i =  0 ; i < SCustomers.getInstance().length ; i++) {
-	    	System.out.println(i);
+	    	    
+	    // Start all Customers threads
+	    for (int i =  0 ; i < SCustomers.getInstance().length ; i++) 
 	    	SCustomers.getInstance()[i].start();	    	
-	    	System.out.println(SCustomers.getInstance()[i].isInterrupted());
-	    }
-	    
+	    	    
 	}
 }
