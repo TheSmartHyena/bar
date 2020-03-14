@@ -1,5 +1,9 @@
 package licence.pro.factories;
 
-public class FCustomer {
+import licence.pro.models.Customer;
 
+public class FCustomer {
+	public static Customer getCustomer() {
+		return new Customer();
+	}
 }
