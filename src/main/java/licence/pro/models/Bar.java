@@ -17,11 +17,13 @@ public class Bar {
     // SBeerStock.getInstance()
     
     // Waiter add a beer
-    public boolean  addBeer(Beer beer)  throws InterruptedException {
-    	boolean result = queue.offer(beer,  200, TimeUnit.MILLISECONDS);
-    	if (result)
-			SBeerStock.getInstance().popBeers(1);
-    	return result;
+    public synchronized boolean addBeer(Beer beer)  throws InterruptedException {
+    	synchronized(key) {
+	    	boolean result = queue.offer(beer,  200, TimeUnit.MILLISECONDS);
+	    	if (result)
+				SBeerStock.getInstance().popBeers(1);
+	    	return result;
+    	}
     }
     
     // Customer get a beer

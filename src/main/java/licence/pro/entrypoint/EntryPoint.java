@@ -12,8 +12,8 @@ public class EntryPoint {
 	   Waiter waiter =  SWaiter.getInstanceA();
 	   Customer customer =  new Customer();
 
-	   Thread [] waiters =  new Thread[1] ;
-	   Thread [] customers =  new Thread[2] ;
+	   Thread[] waiters =  new Thread[3] ;
+	   Thread[] customers =  new Thread[2] ;
 	   
 	   // Setup and run IA
 	   Ia ia = new Ia();

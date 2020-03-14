@@ -9,7 +9,7 @@ public class BeerStock {
 	}
 	
 	private boolean canDoPopBeers(int amount) {
-		return amount < this.availableBeer;
+		return amount <= this.availableBeer;
 	} 
 	
 	// pop = remove one element
@@ -24,7 +24,7 @@ public class BeerStock {
 	}
 	
 	public boolean isOutOfOrder() {
-		return this.canDoPopBeers(1);
+		return !this.canDoPopBeers(1);
 	}
 		
 	public int getAvailableBeer() {

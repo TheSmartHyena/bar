@@ -12,20 +12,7 @@ public class TestWaiter {
 
 	@Before
 	public void setUp() {
-		instance = new Waiter("Bob");
+		instance = new Waiter();
 	}
-	
-	@Test
-	public void testWaiter_nameNotNull() {
-		assertNotNull(instance.getName());
-	}
-	
-	@Test
-	public void testWaiter_nameShouldBeBob() {
-		assertEquals("Bob", instance.getName());
-	}
-	
-	
-	
 	
 }
