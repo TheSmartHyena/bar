@@ -14,7 +14,7 @@ public class TestSWaiter {
 
 	@Before
 	public void setUp() {
-		waiterA = SWaiter.getInstanceA();
+		waiterA = SWaiter.getInstance();
 	}
 	
 	@Test
@@ -29,7 +29,7 @@ public class TestSWaiter {
 	
 	@Test
 	public void testSWaiterA_shouldReturnWaiterOnlyOneInstance() {
-		Waiter waiterTest = SWaiter.getInstanceA();
+		Waiter waiterTest = SWaiter.getInstance();
 		assertSame(waiterA, waiterTest);
 	}
 	

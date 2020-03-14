@@ -9,35 +9,19 @@ public class Customer implements Runnable {
     public void run() {
 
         try {
-           while (true) {
-              // nos mangeurs mangent de façon aléatoire...
+           while (!Thread.currentThread().isInterrupted()) {
              Thread.sleep(CUSTOMER_TICK) ;
-             
-             /*if(SBar.getInstance().getNbPeerPouredNotTook() > 0) {
-            	 SBar.getInstance().takeBeer();
-            	 System.out.println("[" + Thread.currentThread().getName() +  "]" + "[" + SBar.getInstance().getNbPeerPouredNotTook() +  "] glou glou");
-             }else {
-            	 System.out.println("[" + Thread.currentThread().getName() +  "]" + "[" + SBar.getInstance().getNbPeerPouredNotTook() +  "] j'ai soif");
-             }*/
-             
+                    
              Beer beer = SBar.getInstance().takeBeer();
              if(beer != null) {            	 
-            	 System.out.println("[" + Thread.currentThread().getName() +  "]" + "[" + SBar.getInstance().getNbPeerPouredNotTook() +  "] glou glou");
+            	 System.out.println("[" + Thread.currentThread().getName() +  "]" + "[" + SBar.getInstance().getNbPeerPouredNotTook() +  "] sip sip");
              }else {
-            	 System.out.println("[" + Thread.currentThread().getName() +  "]" + "[" + SBar.getInstance().getNbPeerPouredNotTook() +  "] j'ai soif");
-             }
-             	             
-              /*if (beer != null) {
-                System.out.println("[" + Thread.currentThread().getName() +  "]" + "[" + SBar.getInstance().getNbPeerPouredNotTook() +  "] glou glou");
-                                    
-             }  else {
-                System.out.println("[" + Thread.currentThread().getName() +  "]" + "[" + SBar.getInstance().getNbPeerPouredNotTook() +  "] j'ai soif");
-                                    
-             }*/
+            	 System.out.println("[" + Thread.currentThread().getName() +  "]" + "[" + SBar.getInstance().getNbPeerPouredNotTook() +  "] I'm thirsty");
+             }             	            
           }
 
        }  catch (InterruptedException e) {
-          System.out.println("[" + Thread.currentThread().getName() +  "] je m'arrête") ;
+          System.out.println("[" + Thread.currentThread().getName() +  "] I'm stopping") ;
        }
     }
 	

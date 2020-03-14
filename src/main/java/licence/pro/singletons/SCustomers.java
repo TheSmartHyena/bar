@@ -1,16 +1,16 @@
 package licence.pro.singletons;
 
-public class SWaiters {
+public class SCustomers {
 	
 	// Named A, in case of if we want to add more waiter
 	private static Thread[] instance = null;
-	private static final int NB_WAITERS = 3;
+	private static final int NB_CUSTOMERS = 3;
 	
 	public static Thread[] getInstance() {
 		if(instance == null) {
-			instance = new Thread[NB_WAITERS];
-			for (int i=0; i<NB_WAITERS; i++) {
-				instance[i] = new Thread(SWaiter.getInstance());
+			instance = new Thread[NB_CUSTOMERS];
+			for (int i=0; i<NB_CUSTOMERS; i++) {
+				instance[i] = new Thread(SCustomer.getInstance());
 			}
 		}
 		return instance;
