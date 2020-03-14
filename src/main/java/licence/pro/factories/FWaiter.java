@@ -1,5 +1,9 @@
 package licence.pro.factories;
 
-public class FWaiter {
+import licence.pro.models.Waiter;
 
+public class FWaiter {
+	public static Waiter getWaiter() {
+		return new Waiter();
+	}
 }
