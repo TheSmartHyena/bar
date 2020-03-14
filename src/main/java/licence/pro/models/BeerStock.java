@@ -14,9 +14,8 @@ public class BeerStock {
 	
 	// pop = remove one element
 	public void popBeers(int amount) {
-		if(this.canDoPopBeers(amount)) {
-			this.availableBeer -= amount;
-		}
+		if(this.canDoPopBeers(amount)) 
+			this.availableBeer -= amount;		
 	}
 	
 	public void addBeers(int amount) {
@@ -30,5 +29,4 @@ public class BeerStock {
 	public int getAvailableBeer() {
 		return this.availableBeer;
 	}
-
 }
