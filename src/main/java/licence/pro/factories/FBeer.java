@@ -1,5 +1,11 @@
 package licence.pro.factories;
 
-public class FBeer {
+import licence.pro.models.Beer;
 
+public class FBeer {
+	
+	public static Beer getBeer() {
+		return new Beer();
+	}
+	
 }
