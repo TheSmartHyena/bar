@@ -4,7 +4,7 @@ import licence.pro.singletons.SBeerStock;
 
 public class Ia implements Runnable {
 	
-	private static final int IA_TICK = 200;
+	private static final int IA_TICK = 20;
 	
 	public  void run() {
 		try {

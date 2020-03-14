@@ -4,7 +4,7 @@ import licence.pro.singletons.SBar;
 
 public class Customer implements Runnable {
 	
-	private static final int CUSTOMER_TICK = 1000;
+	private static final int CUSTOMER_TICK = 100;
 	
     public void run() {
 

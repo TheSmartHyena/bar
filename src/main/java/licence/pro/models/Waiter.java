@@ -5,7 +5,7 @@ import licence.pro.singletons.SBar;
 
 public class Waiter implements Runnable {
 	
-	private static final int WAITER_TICK = 1000;
+	private static final int WAITER_TICK = 100;
 	private String name;
 	
 	public Waiter(String name) {
