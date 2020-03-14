@@ -1,13 +1,12 @@
 package licence.pro.models;
 
+import licence.pro.constants.ProjectConstants;
 import licence.pro.factories.FBeer;
 import licence.pro.singletons.SBar;
 import licence.pro.singletons.SBeerStock;
 
 public class Waiter implements Runnable {
 	
-	private static final int WAITER_TICK = 100;
-
 	public Waiter() {
 
 	}
@@ -18,7 +17,7 @@ public class Waiter implements Runnable {
 			while (!Thread.currentThread().isInterrupted()) {
 
 				// Every tick, a waiter poor a beer
-				Thread.sleep(WAITER_TICK) ;
+				Thread.sleep(ProjectConstants.WAITER_TICK) ;
 				if ( SBeerStock.getInstance().getAvailableBeer() < 1 ) {
 					// System.out.println("[" + Thread.currentThread().getName() +  "]" + " Out of order.");
 					// Thread.currentThread().interrupt();
