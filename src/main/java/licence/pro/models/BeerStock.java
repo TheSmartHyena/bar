@@ -4,11 +4,7 @@ public class BeerStock {
 	
 	private int availableBeer;
 	
-	// Using Integer allows initialAmount to be null
-	public BeerStock(Integer initialAmount) {
-		if(initialAmount == null) {
-			this.availableBeer = 0;
-		}
+	public BeerStock(int initialAmount) {
 		this.availableBeer = initialAmount;
 	}
 	

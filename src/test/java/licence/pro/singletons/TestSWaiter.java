@@ -33,9 +33,4 @@ public class TestSWaiter {
 		assertSame(waiterA, waiterTest);
 	}
 	
-	@Test
-	public void testSWaiterA_shouldBeNamedBob() {
-		assertEquals(waiterA.getName(), "Bob");
-	}
-	
 }
